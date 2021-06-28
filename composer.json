@@ -1,0 +1,23 @@
+{
+    "name": "globalsoft/miqu-project",
+    "description": "Project template for the MiQu Framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zarkawy",
+            "email": "hassan.elzarkawy@aiesec.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": ""
+        },
+        "files": [
+            "functions.php"
+        ]
+    },
+    "require": {
+        "globalsoft/miqu": "^0.1.0"
+    }
+}

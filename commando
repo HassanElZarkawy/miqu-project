@@ -1,0 +1,9 @@
+<?php
+
+require 'vendor/autoload.php';
+
+use Miqu\Console\Commando;
+
+$comando = new Commando;
+
+$comando->run();
