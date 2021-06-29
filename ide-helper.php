@@ -1,6 +1,6 @@
 <?php /** @noinspection ALL */
 
-namespace Models {
+namespace Miqu\Core\Models {
 
     use Carbon\Carbon;
     use Illuminate\Database\Eloquent\Model;
@@ -72,7 +72,7 @@ namespace Models {
     class Image extends Model {}
 }
 
-namespace Models\Security {
+namespace Miqu\Core\Models\Security {
 
     use Carbon\Carbon;
     use Illuminate\Database\Eloquent\Model;
