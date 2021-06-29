@@ -4,7 +4,7 @@ namespace Controllers;
 
 use Miqu\Core\Http\Controller;
 use Miqu\Core\Http\HttpResponse;
-use Miqu\Core\Views\DataTable;
+use Miqu\Core\Views\DataTables\DataTable;
 use Psr\Http\Message\ServerRequestInterface;
 use ReflectionException;
 

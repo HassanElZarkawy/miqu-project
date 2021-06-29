@@ -2,13 +2,13 @@
 
 namespace Services\Providers;
 
+use Miqu\Core\Security\Csrf\CsrfValidator;
+use Miqu\Core\Security\Csrf\ICsrfValidator;
 use Miqu\Core\ServiceProvider;
-use Services\Security\Admin\AuthenticationManager;
-use Services\Security\Admin\AuthorizationManager;
-use Services\Security\Admin\Contracts\IAuthenticationManager;
-use Services\Security\Admin\Contracts\IAuthorizationManager;
-use Services\Validation\CsrfValidator;
-use Services\Validation\Interfaces\ICsrfValidator;
+use Services\Security\AuthenticationManager;
+use Services\Security\AuthorizationManager;
+use Services\Security\Contracts\IAuthenticationManager;
+use Services\Security\Contracts\IAuthorizationManager;
 
 class SecurityServiceProvider extends ServiceProvider
 {

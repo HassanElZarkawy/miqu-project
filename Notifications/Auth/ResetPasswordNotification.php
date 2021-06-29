@@ -3,9 +3,9 @@
 namespace Notifications\Auth;
 
 use Miqu\Core\Mailer;
-use Models\User;
+use Miqu\Core\Models\User;
+use Miqu\Core\Notifications\INotification;
 use PHPMailer\PHPMailer\Exception;
-use Services\Notifications\Contracts\INotification;
 
 /**
  * Every notification must implement INotification interface

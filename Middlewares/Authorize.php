@@ -7,8 +7,8 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use ReflectionException;
-use Services\Security\Admin\Contracts\IAuthenticationManager;
-use Services\Security\Admin\Contracts\IAuthorizationManager;
+use Services\Security\Contracts\IAuthenticationManager;
+use Services\Security\Contracts\IAuthorizationManager;
 
 class Authorize implements MiddlewareInterface
 {

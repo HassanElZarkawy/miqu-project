@@ -2,4 +2,6 @@
 ide-helpers.php
 composer.lock
 /bin
-/.idea
+/.idea/
+/.git/
+.gitignore

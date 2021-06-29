@@ -1,6 +1,6 @@
 <?php
 
-namespace Services\Security\Admin\Contracts;
+namespace Services\Security\Contracts;
 
 interface IAuthorizationManager
 {

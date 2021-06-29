@@ -5,10 +5,10 @@ namespace Controllers\Auth;
 use Miqu\Core\Http\Controller;
 use Miqu\Core\Http\HttpResponse;
 use Exception;
+use Miqu\Core\Security\Csrf\ICsrfValidator;
 use ReflectionException;
-use Services\Security\Admin\Contracts\IAuthenticationManager;
-use Services\Security\Admin\Contracts\IAuthorizationManager;
-use Services\Validation\Interfaces\ICsrfValidator;
+use Services\Security\Contracts\IAuthenticationManager;
+use Services\Security\Contracts\IAuthorizationManager;
 
 class LoginController extends Controller
 {

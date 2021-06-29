@@ -5,7 +5,7 @@ namespace Controllers\Auth;
 use Miqu\Core\Http\Controller;
 use Miqu\Core\Http\HttpResponse;
 use ReflectionException;
-use Services\Security\Admin\Contracts\IAuthenticationManager;
+use Services\Security\Contracts\IAuthenticationManager;
 
 class LogoutController extends Controller
 {

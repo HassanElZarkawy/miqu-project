@@ -7,7 +7,7 @@ use Exception;
 use Models\Security\Role;
 use Models\User;
 use Repositories\Contracts\IUsersRepository;
-use Services\Security\Admin\Contracts\IAuthorizationManager;
+use Services\Security\Contracts\IAuthorizationManager;
 
 class UsersRepository implements IUsersRepository
 {

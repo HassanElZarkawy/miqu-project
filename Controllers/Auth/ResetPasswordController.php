@@ -7,7 +7,7 @@ use Miqu\Core\Http\HttpRequest;
 use Miqu\Core\Http\HttpResponse;
 use Exception;
 use ReflectionException;
-use Services\Security\Admin\Contracts\IAuthenticationManager;
+use Services\Security\Contracts\IAuthenticationManager;
 
 class ResetPasswordController extends Controller
 {

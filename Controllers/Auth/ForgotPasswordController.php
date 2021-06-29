@@ -4,12 +4,12 @@ namespace Controllers\Auth;
 
 use Miqu\Core\Http\Controller;
 use Miqu\Core\Http\HttpResponse;
+use Miqu\Core\Security\Csrf\ICsrfValidator;
 use Notifications\Auth\ResetPasswordNotification;
 use PHPMailer\PHPMailer\Exception;
 use ReflectionException;
 use Repositories\Contracts\IUsersRepository;
-use Services\Security\Admin\Contracts\IAuthenticationManager;
-use Services\Validation\Interfaces\ICsrfValidator;
+use Services\Security\Contracts\IAuthenticationManager;
 
 class ForgotPasswordController extends Controller
 {
@@ -62,7 +62,7 @@ class ForgotPasswordController extends Controller
      */
     public function index(): HttpResponse
     {
-        return view($this->view);
+        return response()->view($this->view);
     }
 
     /**

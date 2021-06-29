@@ -10,8 +10,8 @@ use Controllers\DataTablesController;
 use Controllers\HomeController;
 use League\Route\RouteGroup;
 use Middlewares\Authorize;
-use Middlewares\Authenticate;
 use Middlewares\UserLanguage;
+use Miqu\Core\Security\Middlewares\Authenticate;
 
 $default_middlewares = collect([
     Authenticate::class,

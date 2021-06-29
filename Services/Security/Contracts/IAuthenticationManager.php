@@ -1,8 +1,8 @@
 <?php
 
-namespace Services\Security\Admin\Contracts;
+namespace Services\Security\Contracts;
 
-use Models\User;
+use Miqu\Core\Models\User;
 
 interface IAuthenticationManager
 {

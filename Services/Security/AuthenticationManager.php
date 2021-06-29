@@ -1,11 +1,11 @@
 <?php
 
-namespace Services\Security\Admin;
+namespace Services\Security;
 
 use Miqu\Core\Authentication;
 use Exception;
-use Models\PasswordResetToken;
-use Models\User;
+use Miqu\Core\Models\PasswordResetToken;
+use Miqu\Core\Models\User;
 
 class AuthenticationManager implements Contracts\IAuthenticationManager
 {
