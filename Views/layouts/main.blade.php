@@ -7,19 +7,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset( 'img/logo.ico' ) }}">
 
-    <!-- page css -->
-    <link href="{{ asset( 'css/admin/bootstrap-datepicker.css' ) }}" rel="stylesheet">
-
     <!-- Core css -->
-    <link href="{{ asset( 'css/admin/admin.min.css' ) }}" rel="stylesheet">
-    <link href="{{ asset( 'css/custom.css' ) }}" rel="stylesheet">
+    <link href="{{ asset( 'css/app.min.css' ) }}" rel="stylesheet">
 
     {!! debugBarAssets() !!}
-
-    <style>
-        /* Chart.js */
-        @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
-    </style>
 
     <script>
         const config = {
@@ -36,15 +27,15 @@
         <!-- Header START -->
         <div class="header">
             <div class="logo logo-dark">
-                <a href="@url('')" class="mt-3">
-                    <img src="@asset('img/fahmney.png')" alt="Logo" style="width: 150px; height: 40px;">
-                    <img class="logo-fold" src="@asset('img/logo.png')" alt="Logo" style="width: 130px; height: 65px;">
+                <a href="{{ url('') }}" class="mt-3">
+                    <img src="{{ asset('img/logo.ico') }}" alt="Logo" style="width: 150px; height: 40px; object-fit: contain">
+                    <img class="logo-fold m-auto" src="{{ asset('img/logo.ico') }}" alt="Logo" style="width: 60px; height: 40px; object-fit: contain">
                 </a>
             </div>
             <div class="logo logo-white">
-                <a href="@url('')">
-                    <img src="assets/images/logo/logo-white.png" alt="Logo">
-                    <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
+                <a href="{{ url('') }}">
+                    <img src="{{ asset('img/logo.ico') }}" alt="Logo">
+                    <img class="logo-fold" src="{{ asset( 'img/logo.ico' ) }}" alt="Logo">
                 </a>
             </div>
             <div class="nav-wrap">
@@ -126,21 +117,27 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 300px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 278px;"></div></div></div>
+                                    <div class="ps-scrollbar-x-rail" style="left: 0; bottom: 0;">
+                                        <div class="ps-scrollbar-x" tabindex="0" style="left: 0; width: 0;"></div>
+                                    </div>
+                                    <div class="ps-scrollbar-y-rail" style="top: 0; height: 300px; right: 0;">
+                                        <div class="ps-scrollbar-y" tabindex="0" style="top: 0; height: 278px;"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li class="dropdown dropdown-animated scale-left">
                         <div class="pointer" data-toggle="dropdown">
                             <div class="avatar avatar-image  m-h-10 m-r-15">
-                                <img src="@asset('img/default-male.png')" alt="">
+                                <img src="{{ asset('img/default-male.png') }}" alt="">
                             </div>
                         </div>
                         <div class="p-b-15 p-t-20 dropdown-menu pop-profile">
                             <div class="p-h-20 p-b-15 m-b-10 border-bottom">
                                 <div class="d-flex m-r-50">
                                     <div class="avatar avatar-lg avatar-image">
-                                        <img src="@asset('img/default-male.png')" alt="">
+                                        <img src="{{ asset('img/default-male.png') }}" alt="">
                                     </div>
                                     <div class="m-l-10">
                                         <p class="m-b-0 text-dark font-weight-semibold">
@@ -188,11 +185,6 @@
                             </a>
                         </div>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="modal" data-target="#quick-view">
-                            <i class="anticon anticon-appstore"></i>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -203,80 +195,40 @@
             <div class="side-nav-inner">
                 <ul class="side-nav-menu scrollable ps-container ps-theme-default" data-ps-id="78813a40-d508-7820-87ab-dd57a6342339">
                     <li class="nav-item dropdown open">
-                        <a href="@url('admin')">
+                        <a href="{{ route('home') }}">
                             <span class="icon-holder">
                                 <i class="anticon anticon-dashboard"></i>
                             </span>
                             <span class="title">{{ __('Dashboard') }}</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0);">
-                            <span class="icon-holder">
-                                <i class="anticon anticon-area-chart"></i>
-                            </span>
-                            <span class="title">{{ __('Statistics') }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0);">
-                            <span class="icon-holder">
-                                <i class="anticon anticon-usergroup-add"></i>
-                            </span>
-                            <span class="title">{{ __('Students') }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" href="javascript:void(0);">
-                            <span class="icon-holder">
-                                <i class="anticon anticon-question-circle"></i>
-                            </span>
-                            <span class="title">{{ __('Learning') }}</span>
-                            <span class="arrow">
-                                <i class="arrow-icon"></i>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a>{{ __('Topics') }}</a>
-                            </li>
-                            <li>
-                                <a>{{ __('Lessons') }}</a>
-                            </li>
-                            <li>
-                                <a>{{ __('Quizzes') }}</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" href="{{ url('class-rooms/') }}">
-                            <span class="icon-holder">
-                                <i class="anticon anticon-cluster"></i>
-                            </span>
-                            <span class="title">{{ __('Class Rooms') }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" href="javascript:void(0);">
-                            <span class="icon-holder">
-                                <i class="anticon anticon-table"></i>
-                            </span>
-                            <span class="title">{{ __('File Library') }}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" href="javascript:void(0);">
-                             <span class="icon-holder">
-                                <i class="anticon anticon-tool"></i>
-                            </span>
-                            <span class="title">{{ __('Account & Settings') }}</span>
-                        </a>
-                    </li>
-                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                        <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+{{--                    <li class="nav-item dropdown">--}}
+{{--                        <a class="dropdown-toggle" href="javascript:void(0);">--}}
+{{--                            <span class="icon-holder">--}}
+{{--                                <i class="anticon anticon-question-circle"></i>--}}
+{{--                            </span>--}}
+{{--                            <span class="title">{{ __('Learning') }}</span>--}}
+{{--                            <span class="arrow">--}}
+{{--                                <i class="arrow-icon"></i>--}}
+{{--                            </span>--}}
+{{--                        </a>--}}
+{{--                        <ul class="dropdown-menu">--}}
+{{--                            <li>--}}
+{{--                                <a>{{ __('Topics') }}</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a>{{ __('Lessons') }}</a>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a>{{ __('Quizzes') }}</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+                    <div class="ps-scrollbar-x-rail" style="left: 0; bottom: 0;">
+                        <div class="ps-scrollbar-x" tabindex="0" style="left: 0; width: 0;"></div>
                     </div>
-                    <div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;">
-                        <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                    <div class="ps-scrollbar-y-rail" style="top: 0; right: 0;">
+                        <div class="ps-scrollbar-y" tabindex="0" style="top: 0; height: 0;"></div>
                     </div>
                 </ul>
             </div>
@@ -323,165 +275,34 @@
                             <input type="text" class="form-control" placeholder="Search">
                         </div>
                         <div class="m-t-30">
-                            <h5 class="m-b-20">Files</h5>
+                            <h5 class="m-b-20">Results</h5>
                             <div class="d-flex m-b-30">
                                 <div class="avatar avatar-cyan avatar-icon">
                                     <i class="anticon anticon-file-excel"></i>
                                 </div>
                                 <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Quater Report.exl</a>
-                                    <p class="m-b-0 text-muted font-size-13">by Finance</p>
-                                </div>
-                            </div>
-                            <div class="d-flex m-b-30">
-                                <div class="avatar avatar-blue avatar-icon">
-                                    <i class="anticon anticon-file-word"></i>
-                                </div>
-                                <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Documentaion.docx</a>
-                                    <p class="m-b-0 text-muted font-size-13">by Developers</p>
-                                </div>
-                            </div>
-                            <div class="d-flex m-b-30">
-                                <div class="avatar avatar-purple avatar-icon">
-                                    <i class="anticon anticon-file-text"></i>
-                                </div>
-                                <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Recipe.txt</a>
-                                    <p class="m-b-0 text-muted font-size-13">by The Chef</p>
-                                </div>
-                            </div>
-                            <div class="d-flex m-b-30">
-                                <div class="avatar avatar-red avatar-icon">
-                                    <i class="anticon anticon-file-pdf"></i>
-                                </div>
-                                <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Project Requirement.pdf</a>
-                                    <p class="m-b-0 text-muted font-size-13">by Project Manager</p>
+                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Sample Result Item</a>
+                                    <p class="m-b-0 text-muted font-size-13">by User</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="m-t-30">
-                            <h5 class="m-b-20">Members</h5>
-                            <div class="d-flex m-b-30">
-                                <div class="avatar avatar-image">
-                                    <img src="assets/images/avatars/thumb-1.jpg" alt="">
-                                </div>
-                                <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Erin Gonzales</a>
-                                    <p class="m-b-0 text-muted font-size-13">UI/UX Designer</p>
-                                </div>
-                            </div>
-                            <div class="d-flex m-b-30">
-                                <div class="avatar avatar-image">
-                                    <img src="assets/images/avatars/thumb-2.jpg" alt="">
-                                </div>
-                                <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Darryl Day</a>
-                                    <p class="m-b-0 text-muted font-size-13">Software Engineer</p>
-                                </div>
-                            </div>
-                            <div class="d-flex m-b-30">
-                                <div class="avatar avatar-image">
-                                    <img src="assets/images/avatars/thumb-3.jpg" alt="">
-                                </div>
-                                <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">Marshall Nichols</a>
-                                    <p class="m-b-0 text-muted font-size-13">Data Analyst</p>
-                                </div>
-                            </div>
+                        <div class="ps-scrollbar-x-rail" style="left: 0; bottom: 0;">
+                            <div class="ps-scrollbar-x" tabindex="0" style="left: 0; width: 0;"></div>
                         </div>
-                        <div class="m-t-30">
-                            <h5 class="m-b-20">News</h5>
-                            <div class="d-flex m-b-30">
-                                <div class="avatar avatar-image">
-                                    <img src="assets/images/others/img-1.jpg" alt="">
-                                </div>
-                                <div class="m-l-15">
-                                    <a href="javascript:void(0);" class="text-dark m-b-0 font-weight-semibold">5 Best Handwriting Fonts</a>
-                                    <p class="m-b-0 text-muted font-size-13">
-                                        <i class="anticon anticon-clock-circle"></i>
-                                        <span class="m-l-5">25 Nov 2018</span>
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="ps-scrollbar-y-rail" style="top: 0; right: 0;">
+                            <div class="ps-scrollbar-y" tabindex="0" style="top: 0; height: 0;"></div>
                         </div>
-                        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Search End-->
-
-        <!-- Quick View START -->
-        <div class="modal modal-right fade quick-view" id="quick-view">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header justify-content-between align-items-center">
-                        <h5 class="modal-title">Theme Config</h5>
-                    </div>
-                    <div class="modal-body scrollable ps-container ps-theme-default" data-ps-id="22853a96-5ce7-9516-d411-1d31b9621007">
-                        <div class="m-b-30">
-                            <h5 class="m-b-0">Header Color</h5>
-                            <p>Config header background color</p>
-                            <div class="theme-configurator d-flex m-t-10">
-                                <div class="radio">
-                                    <input id="header-default" name="header-theme" type="radio" checked="" value="default">
-                                    <label for="header-default"></label>
-                                </div>
-                                <div class="radio">
-                                    <input id="header-primary" name="header-theme" type="radio" value="primary">
-                                    <label for="header-primary"></label>
-                                </div>
-                                <div class="radio">
-                                    <input id="header-success" name="header-theme" type="radio" value="success">
-                                    <label for="header-success"></label>
-                                </div>
-                                <div class="radio">
-                                    <input id="header-secondary" name="header-theme" type="radio" value="secondary">
-                                    <label for="header-secondary"></label>
-                                </div>
-                                <div class="radio">
-                                    <input id="header-danger" name="header-theme" type="radio" value="danger">
-                                    <label for="header-danger"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div>
-                            <h5 class="m-b-0">Side Nav Dark</h5>
-                            <p>Change Side Nav to dark</p>
-                            <div class="switch d-inline">
-                                <input type="checkbox" name="side-nav-theme-toogle" id="side-nav-theme-toogle">
-                                <label for="side-nav-theme-toogle"></label>
-                            </div>
-                        </div>
-                        <hr>
-                        <div>
-                            <h5 class="m-b-0">Folded Menu</h5>
-                            <p>Toggle Folded Menu</p>
-                            <div class="switch d-inline">
-                                <input type="checkbox" name="side-nav-fold-toogle" id="side-nav-fold-toogle">
-                                <label for="side-nav-fold-toogle"></label>
-                            </div>
-                        </div>
-                        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
-                </div>
-            </div>
-        </div>
-        <!-- Quick View END -->
     </div>
 </div>
 
 
-<!-- Core Vendors JS -->
-<script src="{{ asset('js/admin/vendors.min.js') }}"></script>
-
-<!-- page js -->
-<script src="{{ asset('js/admin/chartjs.min.js') }}"></script>
-<script src="{{ asset('js/moment.js') }}"></script>
-<!-- Core JS -->
-<script src="{{ asset('js/admin/app.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/vendors.min.js') }}"></script>
+<script src="{{ asset('js/app.min.js') }}"></script>
 @stack('scripts')
 
 {!! renderDebugBar() !!}

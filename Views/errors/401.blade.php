@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="col-md-6 m-l-auto">
-            <img class="img-fluid" src="@asset('img/401.png')" alt="Unauthorized">
+            <img class="img-fluid" src="{{ asset('img/401.png') }}" alt="Unauthorized">
         </div>
     </div>
 @endsection

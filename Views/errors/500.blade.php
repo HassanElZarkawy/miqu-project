@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="col-md-6 m-l-auto">
-            <img class="img-fluid" src="@asset('img/500.png')" alt="">
+            <img class="img-fluid" src="{{ asset('img/500.png') }}" alt="">
         </div>
     </div>
 @endsection
