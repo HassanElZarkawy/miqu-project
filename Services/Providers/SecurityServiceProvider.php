@@ -18,4 +18,9 @@ class SecurityServiceProvider extends ServiceProvider
         $this->container->Register( IAuthenticationManager::class, AuthenticationManager::class);
         $this->container->Register(ICsrfValidator::class, CsrfValidator::class);
     }
+
+    public function boot()
+    {
+
+    }
 }

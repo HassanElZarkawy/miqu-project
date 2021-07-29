@@ -5,13 +5,14 @@ namespace Services\Security;
 use Exception;
 use Miqu\Core\Models\Security\Role;
 use Miqu\Core\Models\Security\UserRole;
+use Models\User;
 
 class AuthorizationManager implements Contracts\IAuthorizationManager
 {
     /**
      * @throws Exception
      */
-    public function Can(string $permission ) : bool
+    public function Can( string $permission ) : bool
     {
         return true;
     }

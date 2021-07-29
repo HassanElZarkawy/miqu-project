@@ -12,4 +12,9 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->container->Register(IUsersRepository::class, UsersRepository::class);
     }
+
+    public function boot()
+    {
+
+    }
 }

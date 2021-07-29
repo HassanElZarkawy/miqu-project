@@ -36,7 +36,7 @@ class UsersSeeder
             'username' => $this->faker->unique()->userName,
             'email' => $this->faker->unique()->email,
             'password' => $this->password,
-            'type' => $this->faker->randomElement( [ 'teacher', 'teacher', 'admin', 'student', 'student', 'student', 'student' ] ),
+            'type' => $this->faker->randomElement( [ 'admin', 'subscriber' ] ),
             'status' => 'active'
         ];
     }

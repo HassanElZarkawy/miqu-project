@@ -10,10 +10,11 @@ class CreateRolePermissionsTable
     public function up()
     {
         Capsule::schema()->create($this->name, function(Blueprint $table) {
-            $table->id();
-            $table->integer('role_id')->unsigned()->index();
-            $table->integer('permissions_id')->unsigned()->index();
+            $table->id(['role_id', 'permission_id']);
             $table->timestamps();
+
+            $table->foreign('role_id')->references('id')->on('roles')->cascadeOnDelete();
+            $table->foreign('permission_id')->references('id')->on('permissions')->cascadeOnDelete();
         } );
     }
 

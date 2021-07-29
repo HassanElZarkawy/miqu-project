@@ -11,9 +11,11 @@ class CreatePasswordResetTable
     {
         Capsule::schema()->create($this->name, function(Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned()->index();
+            $table->unsignedBigInteger('user_id');
             $table->string('token')->index();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
         } );
     }
 

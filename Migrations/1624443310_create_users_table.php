@@ -15,7 +15,7 @@ class CreateUsersTable
             $table->string('username')->index();
             $table->string('password')->index();
             $table->string('email')->index();
-            $table->enum('type', [ 'student', 'teacher', 'admin' ])->index();
+            $table->enum('type', [ 'subscriber', 'admin' ])->index();
             $table->enum('status', [ 'active', 'suspended' ])->index();
             $table->timestamps();
         } );

@@ -1,6 +1,8 @@
 <?php
 
 use eftec\bladeone\BladeOne;
+use Services\Providers\RepositoryServiceProvider;
+use Services\Providers\SecurityServiceProvider;
 
 return [
     /*
@@ -34,9 +36,9 @@ return [
                 'database' => BASE_DIRECTORY . 'bin/database.sqlite'
             ],
             'mysql' => [
-                'user' => 'root',
+                'user' => '',
                 'password' => '',
-                'name' => 'test',
+                'name' => '',
                 'host' => 'localhost',
                 'charset' => 'utf8',
             ],
@@ -144,7 +146,7 @@ return [
     |
     */
     'tasks' => [
-        //SampleTask::class => '@hourly'
+        //TaskClass::class => '@hourly'
     ],
 
     /*
@@ -156,7 +158,7 @@ return [
     |
     */
     'providers' => [
-        \Services\Providers\RepositoryServiceProvider::class,
-        \Services\Providers\SecurityServiceProvider::class
+        RepositoryServiceProvider::class,
+        SecurityServiceProvider::class
     ]
 ];

@@ -11,11 +11,13 @@ class CreateTokensTable
     {
         Capsule::schema()->create($this->name, function(Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->index();
+            $table->unsignedBigInteger('user_id');
             $table->string('token')->index();
             $table->boolean('extended');
             $table->dateTime('expires_at');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         } );
     }
 
